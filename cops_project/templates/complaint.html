@@ -69,8 +69,12 @@
 <li>
 <a href="#"><i class="fas fa-user-graduate"></i> <span> My Complaints</span> </a>
 </li>
+    <li>
+<a href="{% url 'my_profile' id=user.id %}"><i class="fas fa-book-reader"></i> <span>My Profile</span> </a>
+</li>
+
 <li>
-<a href="edit"><i class="fas fa-user-edit"></i> <span> Edit Profile</span> </a>
+<a href="{% url 'edit_user' id=1 %}"><i class="fas fa-user-edit"></i> <span> Edit Profile</span> </a>
 </li>
 <li>
 <a href="#"><i class="fas fa-book-reader"></i> <span>Notifications</span> </a>
@@ -78,6 +82,9 @@
 <li>
 <a href="logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span> </a>
 </li>
+<!--    <li>-->
+<!--<a href="{% url 'file_complaint' id=user.id %}"><i class="fas fa-sign-out-alt"></i> <span>complaint</span> </a>-->
+<!--</li>-->
 </ul>
 </div>
 </div>
@@ -88,7 +95,7 @@
 <div class="page-header">
 <div class="row align-items-center">
 <div class="col">
-<h3 class="page-title">Welcome {{name}}</h3>
+<h3 class="page-title">Welcome {{user.first_name}}&nbsp;{{user.last_name}}</h3>
 </div>
 </div>
 </div>
@@ -102,64 +109,62 @@
 <div class="col-12">
 <h5 class="form-title"><span>File a Complaint</span></h5>
 </div>
-<div class="col-12 col-sm-6">
-<div class="form-group">
-<label>Subject</label>
-<select class="form-control" id="exampleFormControlSelect1">
-<option>Select Subject</option>
-<option>Murder</option>
-<option>Kidnapping</option>
-    <option>Damaging Property</option>
-    <option>Rape</option>
-    <option>Physical or mental Abuse</option>
-    <option>Theft</option>
-    <option>Others</option>
-</select>
-</div>
-</div>
+    <form method="post" action="{% url 'file_complaint' id=user.id %}">
+        {% csrf_token %}
+            <div class="col-12 col-sm-6">
+            <div class="form-group">
+            <label>Subject</label>
+            <select  name="subject" id="subject">
+                <option>Select Subject</option>
+                <option value="m">Murder</option>
+                <option value="k">Kidnapping</option>
+                <option value="d">Damaging Property</option>
+                <option value="r">Rape</option>
+                <option value="p">Physical or mental Abuse</option>
+                <option value="t">Theft</option>
+                <option value="o">Others</option>
+            </select>
+            </div>
+            </div>
 
-<div class="col-12 col-sm-6">
-<div class="form-group">
-<label>Place of Occurence</label>
-<input type="text" class="form-control">
-</div>
-</div>
-    <div class="col-12 col-sm-6">
-<div class="form-group">
-<label>Date of Occurence</label>
-<input type="date" class="form-control">
-</div>
-</div>
+            <div class="col-12 col-sm-6">
+            <div class="form-group">
+            <label>Place of Occurence</label>
+            <input type="text" name="place">
+            </div>
+            </div>
+                <div class="col-12 col-sm-6">
+            <div class="form-group">
+            <label>Date of Occurence</label>
+            <input type="date" name="date">
+            </div>
+            </div>
 
-<div class="col-12 col-sm-6">
-<div class="form-group">
-<label>Culprit</label>
-<input type="text" class="form-control">
-</div>
-</div>
-<div class="col-12 col-sm-6">
-<div class="form-group">
-<label>Describe about the crime</label>
-<input type="text" class="form-control">
-</div>
-</div>
-<div class="col-12">
-<button type="submit" class="btn btn-primary">Submit</button>
-</div>
-</div>
-</form>
-</div>
-</div>
+            <div class="col-12 col-sm-6">
+            <div class="form-group">
+            <label>Culprit</label>
+            <input type="text" name="culprit">
+            </div>
+            </div>
+            <div class="col-12 col-sm-6">
+            <div class="form-group">
+            <label>Describe about the crime</label>
+            <input type="text" name="describe" >
+            </div>
+            </div>
+            <div class="col-12">
+            <input type="submit">
+            </div>
+    </form>
 </div>
 </div>
 </div>
 </div>
-
 </div>
-
-
+</div>
+</div>
+</div>
 <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
-
 <script src="{% static 'assets/js/popper.min.js' %}"></script>
 <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
 

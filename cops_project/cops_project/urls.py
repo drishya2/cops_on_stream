@@ -28,8 +28,10 @@ urlpatterns = [
     path('login',views.my_login),
     path('logout',views.logout),
     path('police',views.police_login),
-    path('edit_police',views.edit_police),
-    path('edit',views.edit)
+    path('edit_police/<int:id>',views.edit_police,name='edit_police'),
+    path('edit_user/<int:id>',views.edit_user,name='edit_user'),
+    path('my_profile/<int:id>',views.my_profile,name='my_profile'),
+    path('file_complaint/<int:id>',views.file_complaint,name='file_complaint')
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

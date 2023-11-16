@@ -59,7 +59,7 @@
 <a href="#"><i class="fas fa-user-graduate"></i> <span> My Cases</span> </a>
 </li>
 <li>
-<a href="edit_police"><i class="fas fa-user-edit"></i>Edit Profile </a>
+<a href="{% url 'edit_police' id=data.id %}"><i class="fas fa-user-edit"></i>Edit Profile </a>
 </li>
 <li>
 <a href="#"><i class="fas fa-book-reader"></i> <span>Notifications</span> </a>
@@ -81,7 +81,7 @@
 <div class="page-header">
 <div class="row align-items-center">
 <div class="col">
-<h3 class="page-title">Welcome Officer {{name}}</h3>
+<h3 class="page-title">Welcome Officer {{data.name}}</h3>
 </div>
 </div>
 </div>
@@ -90,51 +90,56 @@
 <div class="col-sm-12">
 <div class="card">
 <div class="card-body">
-<form>
-<div class="row">
-<div class="col-12">
-<h5 class="form-title"><span>Salary Information</span></h5>
-</div>
-<div class="col-12 col-sm-6">
-<div class="form-group">
-<label>Staff ID</label>
-<input type="text" class="form-control">
-</div>
-</div>
-<div class="col-12 col-sm-6">
-<div class="form-group">
-<label>Name</label>
-<input type="text" class="form-control">
-</div>
-</div>
-<div class="col-12 col-sm-6">
-<div class="form-group">
-<label>Gender</label>
-<select class="form-control" id="exampleFormControlSelect1">
-<option>Select Gender</option>
-<option>Female</option>
-<option>Male</option>
-<option>Others</option>
-</select>
-</div>
-</div>
-<div class="col-12 col-sm-6">
-<div class="form-group">
-<label>Joining Date</label>
-<input type="date" class="form-control">
-</div>
-</div>
-<div class="col-12 col-sm-6">
-<div class="form-group">
-<label>Amount</label>
-<input type="text" class="form-control">
-</div>
-</div>
-<div class="col-12">
-<button type="submit" class="btn btn-primary">Submit</button>
-</div>
-</div>
-</form>
+            <div class="row">
+            <div class="col-md-4">
+                <img src="{{data.pic.url}}" style="margin:10px; height:300px; width:250px;">
+
+
+            </div>
+            <div class="col-md-8">
+
+                <div class="row">
+                <div class="col-md-6">
+                    <p style="font-size:20px;"><strong>Name:</strong></p>
+                    <p style="font-size:20px;"><strong>Rank:</strong></p>
+                    <p style="font-size:20px;"><strong>Badge Number:</strong></p>
+                    <p style="font-size:20px;"><strong>Age:</strong></p>
+                    <p style="font-size:20px;"><strong>Email:</strong></p>
+                    <p style="font-size:20px;"><strong>Phone Number:</strong></p>
+                    <p style="font-size:20px;"><strong>Years of Service:</strong></p>
+
+
+
+
+
+                </div>
+                <div class="col-md-6">
+                    <p style="font-size:20px;">{{data.name}}</p>
+                    <p style="font-size:20px;">{{data.rank}}</p>
+                    <p style="font-size:20px;">{{data.badge_number}}</p>
+                    <p style="font-size:20px;">{{data.age}}</p>
+                    <p style="font-size:20px;">{{data.email}}</p>
+                    <p style="font-size:20px;">{{data.phone}}</p>
+                    <p style="font-size:20px;">{{data.service_years}}</p>
+
+
+
+                </div>
+                    </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
 </div>
 </div>
 </div>

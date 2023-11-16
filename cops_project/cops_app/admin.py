@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from .models import Case
 
 from .models import My_User,Police
 
@@ -11,3 +12,4 @@ class UserAdmin(admin.ModelAdmin):
 
 admin.site.register(My_User,UserAdmin)
 admin.site.register(Police)
+admin.site.register(Case)
