@@ -1,15 +1,15 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from .models import Case
 
-from .models import My_User,Police
+from .models import Case, CustomUser,Notification
+
 
 # Register your models here.
-class UserAdmin(admin.ModelAdmin):
-    list_filter=["username"]
-    search_fields=["first_name"]
-    list_per_page=10
-
-admin.site.register(My_User,UserAdmin)
-admin.site.register(Police)
+# class UserAdmin(admin.ModelAdmin):
+#     list_filter= ["username"]
+#     search_fields= ["first_name"]
+#     list_per_page= 10
+# admin.site.register(UserAdmin)
 admin.site.register(Case)
+admin.site.register(CustomUser)
+admin.site.register(Notification)
+

@@ -25,13 +25,21 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
     path('register',views.register),
-    path('login',views.my_login),
-    path('logout',views.logout),
-    path('police',views.police_login),
+    path('police_register',views.police_register,name='police_register'),
+    path('login',views.my_login,name='login'),
+    path('log_out',views.log_out,name='log_out'),
     path('edit_police/<int:id>',views.edit_police,name='edit_police'),
     path('edit_user/<int:id>',views.edit_user,name='edit_user'),
     path('my_profile/<int:id>',views.my_profile,name='my_profile'),
-    path('file_complaint/<int:id>',views.file_complaint,name='file_complaint')
+    path('file_complaint/<int:id>',views.file_complaint,name='file_complaint'),
+    path('show_complaint',views.show_complaint,name='show_complaint'),
+    path('my_case',views.my_case,name='my_case'),
+    path('edit_status/<int:id>',views.edit_status,name='edit_status'),
+    path('police_profile',views.police_profile,name='police_profile'),
+    path('notification',views.my_notification,name='notification'),
+    path('redir_complaint',views.redir_complaint,name='redir_complaint'),
+    path('redir_police',views.redir_police,name='redir_police'),
+    path('contact',views.contact)
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

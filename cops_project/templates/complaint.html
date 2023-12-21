@@ -63,24 +63,24 @@
 <div class="sidebar-inner slimscroll">
 <div id="sidebar-menu" class="sidebar-menu">
 <ul>
-<li class="menu-title">
-<span>Main Menu</span>
-</li>
+<!--<li class="menu-title">-->
+<!--<span>Main Menu</span>-->
+<!--</li>-->
 <li>
-<a href="#"><i class="fas fa-user-graduate"></i> <span> My Complaints</span> </a>
+<a href="{% url 'show_complaint' %}"><i class="fas fa-user-graduate"></i> <span> My Complaints</span> </a>
 </li>
     <li>
 <a href="{% url 'my_profile' id=user.id %}"><i class="fas fa-book-reader"></i> <span>My Profile</span> </a>
 </li>
 
 <li>
-<a href="{% url 'edit_user' id=1 %}"><i class="fas fa-user-edit"></i> <span> Edit Profile</span> </a>
+<a href="{% url 'edit_user' id=user.id %}"><i class="fas fa-user-edit"></i> <span> Edit Profile</span> </a>
 </li>
 <li>
-<a href="#"><i class="fas fa-book-reader"></i> <span>Notifications</span> </a>
+<a href="{% url 'notification' %}"><i class="fas fa-book-reader"></i> <span>Notifications</span> </a>
 </li>
 <li>
-<a href="logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span> </a>
+<a href="{% url 'log_out' %}"><i class="fas fa-sign-out-alt"></i> <span>Logout</span> </a>
 </li>
 <!--    <li>-->
 <!--<a href="{% url 'file_complaint' id=user.id %}"><i class="fas fa-sign-out-alt"></i> <span>complaint</span> </a>-->
@@ -104,7 +104,6 @@
 <div class="col-sm-12">
 <div class="card">
 <div class="card-body">
-<form>
 <div class="row">
 <div class="col-12">
 <h5 class="form-title"><span>File a Complaint</span></h5>
@@ -114,15 +113,15 @@
             <div class="col-12 col-sm-6">
             <div class="form-group">
             <label>Subject</label>
-            <select  name="subject" id="subject">
+            <select  name="subject">
                 <option>Select Subject</option>
-                <option value="m">Murder</option>
-                <option value="k">Kidnapping</option>
-                <option value="d">Damaging Property</option>
-                <option value="r">Rape</option>
-                <option value="p">Physical or mental Abuse</option>
-                <option value="t">Theft</option>
-                <option value="o">Others</option>
+                <option value="Murder">Murder</option>
+                <option value="Kidnapping">Kidnapping</option>
+                <option value="Damaging Property">Damaging Property</option>
+                <option value="Rape">Rape</option>
+                <option value="Physical or Mental Abuse">Physical or mental Abuse</option>
+                <option value="Theft">Theft</option>
+                <option value="Others">Others</option>
             </select>
             </div>
             </div>
@@ -146,16 +145,42 @@
             <input type="text" name="culprit">
             </div>
             </div>
+
+                    <div class="col-12 col-sm-6">
+            <div class="form-group">
+            <label>Victim</label>
+            <input type="text" name="victim">
+            </div>
+            </div>
+
             <div class="col-12 col-sm-6">
             <div class="form-group">
             <label>Describe about the crime</label>
             <input type="text" name="describe" >
             </div>
             </div>
+
+
+<!--                        <div class="col-12 col-sm-6">-->
+<!--            <div class="form-group">-->
+<!--            <label>Select Officer</label>-->
+<!--            <select  name="officer">-->
+
+<!--               {% for officer in police_officer %}-->
+<!--                <option value="{{officer.id}}">{{officer.username}}</option>-->
+
+<!--                {% endfor %}-->
+
+<!--            </select>-->
+<!--            </div>-->
+<!--            </div>-->
+
+
+
             <div class="col-12">
             <input type="submit">
             </div>
-    </form>
+       </form>
 </div>
 </div>
 </div>

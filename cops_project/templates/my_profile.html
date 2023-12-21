@@ -52,19 +52,19 @@
 <!--<span>Main Menu</span>-->
 <!--</li>-->
 <li>
-<a href="#"><i class="fas fa-user-graduate"></i> <span> My Complaints</span> </a>
+<a href="{% url 'show_complaint' %}"><i class="fas fa-user-graduate"></i> <span> My Complaints</span> </a>
 </li>
     <li>
-<a href=""><i class="fas fa-user-graduate"></i> <span>Add Complaint</span> </a>
+<a href="{% url 'file_complaint' id=user.id %}"><i class="fas fa-user-graduate"></i> <span>Add Complaint</span> </a>
+</li>
+    <li>
+<a href="{% url 'edit_user' id=user.id  %}"><i class="fas fa-user-edit"></i> <span> Edit Profile</span> </a>
 </li>
 <li>
-<a href="{% url 'edit_police' id=data.id %}"><i class="fas fa-user-edit"></i>Edit Profile </a>
+<a href="{% url 'notification' %}"><i class="fas fa-book-reader"></i> <span>Notifications</span> </a>
 </li>
 <li>
-<a href="#"><i class="fas fa-book-reader"></i> <span>Notifications</span> </a>
-</li>
-<li>
-<a href="logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span> </a>
+<a href="{% url 'log_out' %}"><i class="fas fa-sign-out-alt"></i> <span>Logout</span> </a>
 </li>
 </ul>
 </div>

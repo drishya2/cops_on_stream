@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+{% load static %}
+
+<!--
+	ZeroFour by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<style>
+			        #one{
+          margin-left: 10px;
+
+		</style>
+		<title>Right Sidebar - ZeroFour by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	</head>
+	<body class="right-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header Wrapper -->
+				<div id="header-wrapper">
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+										<h1><a href="index.html" id="logo">Cops On Stream</a></h1>
+
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+												<li><a href="/">Home</a></li>
+									<li><a href="login">Login</a></li>
+												<li><a href="contact">Contact Us</a></li>
+											</ul>
+										</nav>
+
+								</div>
+							</header>
+
+					</div>
+				</div>
+
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style2">
+						<div class="inner">
+							<div class="container">
+								<div class="row">
+									<div class="col-8 col-12-medium">
+										<div id="content">
+
+											<!-- Content -->
+
+												<article>
+													<header class="major" >
+<h2 style="font-family: 'Times New Roman', Times, serif; margin: 40px;font-size:40px;text-align:center;padding-left:400px;"> Police Registration</h2>
+													</header>
+		<form method='post' action="police_register" enctype="multipart/form-data" style="width:500px;padding-left: 100px;margin-left: 300px;;">
+         {% csrf_token %}
+
+            <div class="row mb-2 ">
+              <label style=""  class="col-sm-2 col-form-label no-space-break">First name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="first_name"><br>
+              </div>
+            </div>
+
+
+            <div class="row mb-2 ">
+                <label  class="col-sm-2 col-form-label no-space-break">Last name</label>
+                <div class="col-sm-10">
+                  <input style="margin-left:5px;" type="text" class="form-control"  name="last_name"><br>
+                </div>
+              </div>
+
+
+                        <div class="row mb-2 ">
+                <label  class="col-sm-2 col-form-label no-space-break">Username</label>
+                <div class="col-sm-10">
+                  <input style="margin-left:5px;" type="text" name="username" class="form-control" id="username"><br>
+                </div>
+              </div>
+
+
+			                        <div class="row mb-2 ">
+                <label  class="col-sm-2 col-form-label no-space-break">Age</label>
+                <div class="col-sm-10">
+                  <input style="margin-left:35px;" type="text" name="age" class="form-control"><br>
+                </div>
+              </div>
+            			                        <div class="row mb-2 ">
+                <label for="phone" class="col-sm-2 col-form-label no-space-break">Position</label>
+                <div class="col-sm-10">
+                  <input style="margin-left:35px;" type="text" name="position" class="form-control"><br>
+                </div>
+              </div>
+
+
+			                        <div class="row mb-2 ">
+                <label for="phone" class="col-sm-2 col-form-label no-space-break">Rank</label>
+                <div class="col-sm-10">
+                  <input style="margin-left:35px;" type="text" name="rank" class="form-control"><br>
+                </div>
+              </div>
+
+			                        <div class="row mb-2 ">
+                <label for="phone" class="col-sm-2 col-form-label no-space-break">Badge Number</label>
+                <div class="col-sm-10">
+                  <input style="margin-left:35px;" type="text" name="badge_number" class="form-control"><br>
+                </div>
+              </div>
+
+
+			                        <div class="row mb-2 ">
+                <label for="phone" class="col-sm-2 col-form-label no-space-break">Years of service</label>
+                <div class="col-sm-10">
+                  <input style="margin-left:35px;" type="text" name="service_years" class="form-control"><br>
+                </div>
+              </div>
+
+
+
+                        <div class="row mb-2 ">
+                <label for="phone" class="col-sm-2 col-form-label no-space-break">Phone</label>
+                <div class="col-sm-10">
+                  <input style="margin-left:35px;" type="text" name="phone" class="form-control" id="phone"><br>
+                </div>
+              </div>
+
+
+
+              <div class="row mb-2 ">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input  style="margin-left:40px;"type="email" name="email" class="form-control" id="email"><br>
+                </div>
+              </div>
+
+
+
+                            <div class="row mb-2 ">
+                <label  class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-10">
+                  <input  style="margin-left:20px;"type="text" name="address" class="form-control"><br>
+                </div>
+              </div>
+
+			              <div class="row mb-2 ">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" name='password' class="form-control" id="inputPassword3"><br>
+                </div>
+              </div>
+
+
+			<div class="row mb-2 ">
+                <label  class="col-sm-2 col-form-label">Profile Picture</label>
+                <div class="col-sm-10">
+                  <input  style="margin-left:20px;" type="file" name="pic" class="form-control"><br>
+                </div>
+              </div>
+
+
+
+
+
+            <button style="margin-left:110px;" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+
+
+
+
+											<!-- Sidebar -->
+
+
+
+
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    document.querySelector(".mark-all-as-read-btn").addEventListener("click", () => {
+    document.querySelectorAll(".message-unread").forEach(message => {
+        message.classList.remove("message-unread");
+        message.classList.add("message");
+    });
+    document.querySelector(".unread-count").textContent = '0';
+});
+
+  </script>
+    <style>
+        *,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color_1_white: hsl(0, 0%, 100%);
+  --color_2_very_light_grayish_blue: hsl(210, 60%, 98%);
+  --color_3_light_grayish_blue_1: hsl(211, 68%, 94%);
+  --color_4_light_grayish_blue_2: hsl(205, 33%, 90%);
+  --color_5_grayish-blue: hsl(219, 14%, 63%);
+  --color_6_dark_grayish_blue: hsl(219, 12%, 42%);
+  --color_7_very_dark_blue: hsl(224, 21%, 14%);
+  --color_8_red: hsl(1, 90%, 64%);
+  --color_9_blue: hsl(219, 85%, 26%);
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  background-color: var(--color_2_very_light_grayish_blue);
+  color: var(--color_6_dark_grayish_blue);
+<!--  min-height: 100vh;-->
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+<!--  justify-content: center;-->
+  align-items: center;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color_1_white);
+    border-radius: 18px;
+    padding: 5% 25%;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .header-container h1 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 2.0rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .unread-count {
+    width: 35px;
+    height: 26.5px;
+    background-color: var(--color_9_blue);
+    border-radius: 8px;
+    color: var(--color_1_white);
+    position: relative;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .mark-all-as-read-btn {
+    color: var(--color_6_dark_grayish_blue);
+    background: transparent;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+  }
+
+
+.message-unread {
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: max-content 4fr max-content;
+  grid-template-rows: 2fr;
+  gap: 10px;
+  background-color: var(--color_2_very_light_grayish_blue);
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.message {
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: max-content 4fr max-content;
+  grid-template-rows: 2fr;
+  gap: 10px;
+  color: var(--color_6_dark_grayish_blue);
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.image-wrapper img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+
+.user-name-and-action {
+  display: flex;
+  align-items: baseline;
+  white-space: nowrap;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.user-name {
+    color: var(--color_7_very_dark_blue);
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+.highlight {
+    color: var(--color_6_dark_grayish_blue);
+    font-weight: 900;
+    margin-left: 5px;
+}
+
+.last-online {
+    margin-left: 10px;
+}
+
+.chess {
+  color: var(--color_9_blue);
+  font-weight: 900;
+  margin-left: 5px;
+}
+
+.message-box {
+  border: solid var(--color_6_dark_grayish_blue);
+  border-width: 1px 1px;
+  padding: 12px 12px;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+/* footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
+    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="" <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Notifications page</title>
+</head>
+
+<body>
+      <h1 style="margin-left:500px;">Notifications </h1>
+    <ul style="margin-left:250px;">
+        {% for i in data %}
+      <li>
+            {{i.notification}}<br><br>
+      </li>
+        {% endfor %}
+    </ul>
+  <script src="script.js"></script>
+</body>
+
+</html>

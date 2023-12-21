@@ -56,16 +56,16 @@
 <!--<span>Main Menu</span>-->
 <!--</li>-->
 <li>
-<a href="#"><i class="fas fa-user-graduate"></i> <span> My Cases</span> </a>
+<a href="{% url 'my_case' %}"><i class="fas fa-user-graduate"></i> <span> My Cases</span> </a>
 </li>
 <li>
-<a href="{% url 'edit_police' id=data.id %}"><i class="fas fa-user-edit"></i>Edit Profile </a>
+<a href="{% url 'edit_police' id=user.id %}"><i class="fas fa-user-edit"></i>Edit Profile </a>
 </li>
 <li>
-<a href="#"><i class="fas fa-book-reader"></i> <span>Notifications</span> </a>
+<a href="{% url 'notification' %}"><i class="fas fa-book-reader"></i> <span>Notifications</span> </a>
 </li>
 <li>
-<a href="logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span> </a>
+<a href="{% url 'log_out' %}"><i class="fas fa-sign-out-alt"></i> <span>Logout</span> </a>
 </li>
 
 
@@ -81,23 +81,19 @@
 <div class="page-header">
 <div class="row align-items-center">
 <div class="col">
-<h3 class="page-title">Welcome Officer {{data.name}}</h3>
+<h3 class="page-title">Welcome Officer {{user.first_name}}&nbsp;{{user.last_name}}</h3>
 </div>
 </div>
 </div>
-
 <div class="row">
 <div class="col-sm-12">
 <div class="card">
 <div class="card-body">
             <div class="row">
             <div class="col-md-4">
-                <img src="{{data.pic.url}}" style="margin:10px; height:300px; width:250px;">
-
-
+                <img src="{{user.pic.url}}" style="margin:10px; height:300px; width:250px;">
             </div>
             <div class="col-md-8">
-
                 <div class="row">
                 <div class="col-md-6">
                     <p style="font-size:20px;"><strong>Name:</strong></p>
@@ -107,37 +103,18 @@
                     <p style="font-size:20px;"><strong>Email:</strong></p>
                     <p style="font-size:20px;"><strong>Phone Number:</strong></p>
                     <p style="font-size:20px;"><strong>Years of Service:</strong></p>
-
-
-
-
-
                 </div>
                 <div class="col-md-6">
-                    <p style="font-size:20px;">{{data.name}}</p>
-                    <p style="font-size:20px;">{{data.rank}}</p>
-                    <p style="font-size:20px;">{{data.badge_number}}</p>
-                    <p style="font-size:20px;">{{data.age}}</p>
-                    <p style="font-size:20px;">{{data.email}}</p>
-                    <p style="font-size:20px;">{{data.phone}}</p>
-                    <p style="font-size:20px;">{{data.service_years}}</p>
-
-
-
+                    <p style="font-size:20px;">{{user.first_name}}&nbsp;{{last_name}}</p>
+                    <p style="font-size:20px;">{{user.rank}}</p>
+                    <p style="font-size:20px;">{{user.badge_number}}</p>
+                    <p style="font-size:20px;">{{user.age}}</p>
+                    <p style="font-size:20px;">{{user.email}}</p>
+                    <p style="font-size:20px;">{{user.phone}}</p>
+                    <p style="font-size:20px;">{{user.service_years}}</p>
                 </div>
                     </div>
-
-
-
-
-
             </div>
-
-
-
-
-
-
         </div>
 
 </div>

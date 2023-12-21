@@ -1,9 +1,9 @@
 from django import forms
-from .models import Police,My_User,Case
+from .models import CustomUser,Case
 class CopsEditForm(forms.ModelForm):
     class Meta:
-        model=Police
-        fields=['name','rank','badge_number','age','email','phone','service_years','pic']
+        model=CustomUser
+        fields=['username','rank','badge_number','age','email','phone','service_years','pic']
 
 
 class UserForm(forms.ModelForm):
@@ -13,7 +13,12 @@ class UserForm(forms.ModelForm):
 
 class UserEditForm(forms.ModelForm):
     class Meta:
-        model=My_User
+        model=CustomUser
         fields=['first_name','last_name','username','phone','email','address','password','pic']
+class StatusEditForm(forms.ModelForm):
+    class Meta:
+        model=Case
+        fields=['status']
+
 
 
