@@ -2,6 +2,7 @@
 {% load static %}
 
 <!--
+
 	ZeroFour by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
@@ -9,16 +10,344 @@
 <html>
 	<head>
 		<style>
-			        #one{
-          margin-left: 10px;
+			*{
+  margin:0;
+  padding:0;
+}
 
-		</style>
-		<title>Right Sidebar - ZeroFour by HTML5 UP</title>
+h1 {
+  font-size: 2em;
+  font-family: "Core Sans N W01 35 Light";
+  font-weight: normal;
+  margin: .67em 0;
+  display: block;
+}
+
+#registered {
+    margin-top: 50px;
+}
+
+#registered img {
+    margin-bottom: 0px;
+    width: 100px;
+    height: 100px;
+}
+
+#registered span {
+    clear: both;
+    display: block;
+}
+
+img {
+    margin-bottom: 20px;
+}
+
+.avatar {
+    margin: 10px 0 20px 0;
+}
+
+.module{
+  position:relative;
+  top:10%;
+  height:65%;
+  width:450px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.user {
+    color: #66d8fc;
+    font-weight: bold;
+}
+
+.userlist {
+    float:left;
+    padding: 30px;
+}
+
+.userlist span {
+    color: #0590fc;
+}
+
+.welcome{
+  position:relative;
+  top:30%;
+  height:65%;
+  width:900px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 50px;
+}
+
+::-moz-selection {
+  background: #19547c;
+}
+::selection {
+  background: #19547c;
+}
+input::-moz-selection {
+  background: #037db6;
+}
+input::selection {
+  background: #037db6;
+}
+
+body{
+  color: #fff;
+  background-color:#f0f0f0;
+  font-family:helvetica;
+  background:url('http://clevertechie.com/img/bnet-bg.jpg') #0f2439 no-repeat center top;
+}
+
+.body-content{
+  position:relative;
+  top:20px;
+  height:700px;
+  width:800px;
+  margin-left:auto;
+  margin-right:auto;
+  background: transparent;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"]
+{
+  height:30px;
+  width:100%;;
+  display: inline-block;
+  vertical-align: middle;
+  height: 34px;
+  padding: 0 10px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.7);
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -webkit-transition: background-position 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition: background-position 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+select:hover,
+textarea:hover,
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="email"]:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.7);
+}
+select:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  border: 2px solid;
+  border-color: #1e5f99;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+.btn {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 3px 0;
+  padding: 6px 20px;
+  font-size: 15px;
+  line-height: 20px;
+  height: 34px;
+  background-color: rgba(0, 0, 0, 0.15);
+  color: #00aeff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  -webkit-transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+.btn.active,
+.btn:active {
+  padding: 7px 19px 5px 21px;
+}
+.btn.disabled:active,
+.btn[disabled]:active,
+.btn.disabled.active,
+.btn[disabled].active {
+  padding: 6px 20px !important;
+}
+.btn:hover,
+.btn:focus {
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 rgba(0, 0, 0, 0);
+}
+.btn:active,
+.btn.active {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 1.5px 1.5px 3px rgba(0, 0, 0, 0.5);
+}
+.btn-primary {
+  background-color: #098cc8;
+  color: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: 0 0 rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  -webkit-transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
+  background-image: -webkit-linear-gradient(top, #0f9ada, #0076ad);
+  background-image: linear-gradient(to bottom, #0f9ada, #0076ad);
+  border: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #21b0f1;
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 0 rgba(0, 0, 0, 0);
+}
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #006899;
+  color: rgba(255, 255, 255, 0.7);
+  border-color: transparent;
+  box-shadow: inset 1.5px 1.5px 3px rgba(0, 0, 0, 0.5);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-image: -webkit-linear-gradient(top, #37c0ff, #0097dd);
+  background-image: linear-gradient(to bottom, #37c0ff, #0097dd);
+}
+.btn-primary:active,
+.btn-primary.active {
+  background-image: -webkit-linear-gradient(top, #006ea1, #00608d);
+  background-image: linear-gradient(to bottom, #006ea1, #00608d);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6) inset, 0 0 0 1px rgba(255, 255, 255, 0.07) inset;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.alert {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 4px 20px 4px 20px;
+  font-size: 13px;
+  line-height: 20px;
+  margin-bottom: 20px;
+  text-shadow: none;
+  position: relative;
+  background-color: #272e3b;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #000;
+  box-shadow: 0 0 0 1px #363d49 inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+.alert-error {
+  color: #f00;
+  background-color: #360e10;
+  box-shadow: 0 0 0 1px #551e21 inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+.alert:empty{
+    display: none;
+}
+.alert-success {
+  color: #21ec0c;
+  background-color: #15360e;
+  box-shadow: 0 0 0 1px #2a551e inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+
+
+</style>
+
+		<title>Left Sidebar - ZeroFour by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
 	</head>
-	<body class="right-sidebar is-preload">
+	<style>
+		body {
+  background: #0A1172;
+  font-family: "Century Gothic";
+}
+
+.registration-page {
+  width: 100%;
+  margin: auto;
+}
+
+.form {
+  background: #ffffff;
+  padding: 5%;
+  text-align: center;
+}
+
+.form h2{
+  color: #0A1172;
+}
+
+.form input {
+  font-family: "Century Gothic";
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form button {
+  font-family: "Century Gothic";
+  background: #0A1172;
+  width: 100%;
+  border: 0;
+  padding: 5%;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.form .message {
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #0A1172
+}
+
+.form button:hover{
+  background-color: blue;
+}
+
+@media only screen and (min-width: 768px){
+  .registration-page{
+    width: 35%;
+    margin: auto;
+  }
+}
+</style>
+	<body class="left-sidebar is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header Wrapper -->
@@ -36,8 +365,7 @@
 										<nav id="nav">
 											<ul>
 												<li><a href="/">Home</a></li>
-									<li><a href="login">Login</a></li>
-												<li><a href="contact">Contact Us</a></li>
+												<li class="current_page_item"><a href="register">Register</a></li>
 											</ul>
 										</nav>
 
@@ -46,156 +374,36 @@
 
 					</div>
 				</div>
+			{% if message %}
+			<p style="color:red;text-align:center;">{{message}}</p>
+			{% endif %}
+<div class="registration-page">
+      <div class="form">
+        <form class="registration-form" method="post" action="police_register" enctype="multipart/form-data">
+			{% csrf_token %}
+          <h2> Police Registration </h2>
 
-			<!-- Main Wrapper -->
-				<div id="main-wrapper">
-					<div class="wrapper style2">
-						<div class="inner">
-							<div class="container">
-								<div class="row">
-									<div class="col-8 col-12-medium">
-										<div id="content">
+          <input type="text" name="first_name" placeholder=" First Name" required>
+			          <input type="text" name="last_name" placeholder=" Last Name" required>
+          <input type="text" name="username" placeholder="Username" required>
+            			          <input type="text" name="email" placeholder="Email" required>
+			          <input type="number" name="age" placeholder="Age" required>
+			          <input type="text" name="position" placeholder="Position" required>
+			          <input type="text" name="rank" placeholder="Rank" required>
+			          <input type="number" name="badge_number" placeholder="Badge Number" required>
 
-											<!-- Content -->
+			          <input type="number" name="service_years" placeholder="Years of Service" required>
+			          <input type="number" name="phone" placeholder="Phone" required>
+			          <input type="text" placeholder="Address" name="address" required>
+			          <input type="file" placeholder="Profile Photo" name="pic" required>
+                     <input type="password" placeholder="Password" name="password" required>
 
-												<article>
-													<header class="major" >
-<h2 style="font-family: 'Times New Roman', Times, serif; margin: 40px;font-size:40px;text-align:center;padding-left:400px;"> Police Registration</h2>
-													</header>
-		<form method='post' action="police_register" enctype="multipart/form-data" style="width:500px;padding-left: 100px;margin-left: 300px;;">
-         {% csrf_token %}
+          <button type="submit">Register </button>
+          <p class="message">Already have an account? <a href="login">Sign in</a></p>
 
-            <div class="row mb-2 ">
-              <label style=""  class="col-sm-2 col-form-label no-space-break">First name</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="first_name"><br>
-              </div>
-            </div>
-
-
-            <div class="row mb-2 ">
-                <label  class="col-sm-2 col-form-label no-space-break">Last name</label>
-                <div class="col-sm-10">
-                  <input style="margin-left:5px;" type="text" class="form-control"  name="last_name"><br>
-                </div>
-              </div>
-
-
-                        <div class="row mb-2 ">
-                <label  class="col-sm-2 col-form-label no-space-break">Username</label>
-                <div class="col-sm-10">
-                  <input style="margin-left:5px;" type="text" name="username" class="form-control" id="username"><br>
-                </div>
-              </div>
-
-
-			                        <div class="row mb-2 ">
-                <label  class="col-sm-2 col-form-label no-space-break">Age</label>
-                <div class="col-sm-10">
-                  <input style="margin-left:35px;" type="text" name="age" class="form-control"><br>
-                </div>
-              </div>
-            			                        <div class="row mb-2 ">
-                <label for="phone" class="col-sm-2 col-form-label no-space-break">Position</label>
-                <div class="col-sm-10">
-                  <input style="margin-left:35px;" type="text" name="position" class="form-control"><br>
-                </div>
-              </div>
-
-
-			                        <div class="row mb-2 ">
-                <label for="phone" class="col-sm-2 col-form-label no-space-break">Rank</label>
-                <div class="col-sm-10">
-                  <input style="margin-left:35px;" type="text" name="rank" class="form-control"><br>
-                </div>
-              </div>
-
-			                        <div class="row mb-2 ">
-                <label for="phone" class="col-sm-2 col-form-label no-space-break">Badge Number</label>
-                <div class="col-sm-10">
-                  <input style="margin-left:35px;" type="text" name="badge_number" class="form-control"><br>
-                </div>
-              </div>
-
-
-			                        <div class="row mb-2 ">
-                <label for="phone" class="col-sm-2 col-form-label no-space-break">Years of service</label>
-                <div class="col-sm-10">
-                  <input style="margin-left:35px;" type="text" name="service_years" class="form-control"><br>
-                </div>
-              </div>
-
-
-
-                        <div class="row mb-2 ">
-                <label for="phone" class="col-sm-2 col-form-label no-space-break">Phone</label>
-                <div class="col-sm-10">
-                  <input style="margin-left:35px;" type="text" name="phone" class="form-control" id="phone"><br>
-                </div>
-              </div>
-
-
-
-              <div class="row mb-2 ">
-                <label for="email" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                  <input  style="margin-left:40px;"type="email" name="email" class="form-control" id="email"><br>
-                </div>
-              </div>
-
-
-
-                            <div class="row mb-2 ">
-                <label  class="col-sm-2 col-form-label">Address</label>
-                <div class="col-sm-10">
-                  <input  style="margin-left:20px;"type="text" name="address" class="form-control"><br>
-                </div>
-              </div>
-
-			              <div class="row mb-2 ">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                  <input type="password" name='password' class="form-control" id="inputPassword3"><br>
-                </div>
-              </div>
-
-
-			<div class="row mb-2 ">
-                <label  class="col-sm-2 col-form-label">Profile Picture</label>
-                <div class="col-sm-10">
-                  <input  style="margin-left:20px;" type="file" name="pic" class="form-control"><br>
-                </div>
-              </div>
-
-
-
-
-
-            <button style="margin-left:110px;" type="submit" class="btn btn-primary">Submit</button>
-          </form>
-
-
-
-
-
-											<!-- Sidebar -->
-
-
-
-
-
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				</div>
-
-		</div>
-
+        </form>
+      </div>
+    </div>
 		<!-- Scripts -->
 			<script src="{% static 'js/jquery.min.js' %}"></script>
 			<script src="{% static 'js/jquery.dropotron.min.js' %}"></script>

@@ -37,9 +37,9 @@ urlpatterns = [
     path('edit_status/<int:id>',views.edit_status,name='edit_status'),
     path('police_profile',views.police_profile,name='police_profile'),
     path('notification',views.my_notification,name='notification'),
+    path('police_notification',views.police_notification,name='police_notification'),
     path('redir_complaint',views.redir_complaint,name='redir_complaint'),
     path('redir_police',views.redir_police,name='redir_police'),
-    path('contact',views.contact)
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

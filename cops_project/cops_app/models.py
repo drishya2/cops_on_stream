@@ -17,7 +17,7 @@ class CustomUser(AbstractUser):
                    ('pending','pending'),
                    ('rejected','rejected')
     )
-    entry=models.CharField(choices=entry_choices,max_length=50,default='pending')
+    entry=models.CharField(choices=entry_choices,max_length=50,default='pending',null=True,blank=True)
 
 
 
@@ -35,19 +35,22 @@ class Case(models.Model):
         ('others','others')
 
     )
-    type=models.CharField(choices=type_choices,max_length=50)
+    type=models.CharField(choices=type_choices,max_length=50,blank=True)
     date=models.DateField()
     place=models.CharField(max_length=50)
     culprit=models.CharField(max_length=50)
     victim=models.CharField(max_length=50)
     describe=models.CharField(max_length=50)
     user=models.ForeignKey(CustomUser,related_name='my_user',on_delete=models.CASCADE)
-    police=models.ForeignKey(CustomUser,related_name='assigned_police',on_delete=models.CASCADE,blank=True)
+    police=models.ForeignKey(CustomUser,related_name='assigned_police',on_delete=models.CASCADE,blank=True,null=True)
     status_choices=(('Case ongoing','Case ongoing'),
                     ('Case Incomplete','Case incomplete'),
                     ('Case solved/closed','Case solved/closed')
     )
-    status=models.CharField(choices=status_choices,max_length=50)
+    status=models.CharField(choices=status_choices,max_length=50,null=True,blank=True)
+
+    # def __str__(self):
+    #     return self.type
 
 
 

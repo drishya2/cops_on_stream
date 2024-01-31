@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<style>
+
+    .container{
+        text-align: center;
+    }
+</style>
+
+		<title>Left Sidebar - ZeroFour by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	</head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
+body {
+  color: white;
+  background:#293949;
+  font-family: 'Open Sans',sans-serif;
+  padding: 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+.sidebar-toggle {
+  margin-left: -240px;
+}
+.sidebar {
+  width: 240px;
+  height: 100%;
+  background: #293949;
+  position: absolute;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  z-index: 100;
+  #leftside-navigation {
+    ul, ul ul {
+      margin: -2px 0 0;
+      padding: 0;
+    }
+    ul {
+      li {
+        list-style-type: none;
+        border-bottom: 1px solid rgba(255,255,255,.05);
+        &.active {
+          & > a {
+            color:#1abc9c;
+          }
+          ul {
+            display: block;
+          }
+        }
+        a {
+          color:#aeb2b7;
+          text-decoration: none;
+          display: block;
+          padding: 18px 0 18px 25px;
+          font-size: 12px;
+          outline: 0;
+          -webkit-transition: all 200ms ease-in;
+          -moz-transition: all 200ms ease-in;
+          -o-transition: all 200ms ease-in;
+          -ms-transition: all 200ms ease-in;
+          transition: all 200ms ease-in;
+          &:hover {
+            color:#1abc9c;
+          }
+          span {
+            display: inline-block;
+          }
+          i {
+            width: 20px;
+            .fa-angle-left, .fa-angle-right {
+              padding-top: 3px;
+            }
+          }
+        }
+      }
+    }
+    ul ul {
+      display: none;
+      li {
+        background: #23313f;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        border-bottom: none;
+        a {
+          font-size: 12px;
+          padding-top: 13px;
+          padding-bottom: 13px;
+          color:#aeb2b7;
+        }
+      }
+    }
+  }
+}
+    </style>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header Wrapper -->
+				<div >
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+										<h1><a href="index.html" id="logo">Cops On Stream</a></h1>
+
+									<!-- Nav -->
+										<nav id="nav">
+										</nav>
+
+								</div>
+							</header>
+
+					</div>
+				</div>
+
+            <aside class="sidebar">
+  <div id="leftside-navigation" class="nano">
+    <ul class="nano-content">
+      <li>
+        <a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+      </li>
+      <li>
+        <a href="{% url 'my_case' %}"><i class="fa fa-comments"></i><span>My Cases</span></a>
+      </li>
+
+      <li>
+        <a href="{% url 'police_profile' %}"><i class="fa fa-user"></i><span>My Profile</span></a>
+      </li>
+      <li>
+        <a href="{% url 'edit_police' id=user.id %}"><i class="fas fa-user-edit"></i><span>Edit Profile</span></a>
+      </li>
+      <li>
+        <a href="{% url 'log_out' %}"><i class="fa fa-sign-out"></i><span>Logout</span></a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+										<div class="row">
+							{% for i in data %}
+			<h1>{{i.notification}}</h1>
+			{% endfor %}
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

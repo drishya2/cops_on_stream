@@ -1,204 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<style>
 
-<head>
-  <script>
-    document.querySelector(".mark-all-as-read-btn").addEventListener("click", () => {
-    document.querySelectorAll(".message-unread").forEach(message => {
-        message.classList.remove("message-unread");
-        message.classList.add("message");
-    });
-    document.querySelector(".unread-count").textContent = '0';
-});
+    .container{
+        text-align: center;
+    }
+</style>
 
-  </script>
+		<title>Left Sidebar - ZeroFour by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	</head>
     <style>
-        *,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-:root {
-  --color_1_white: hsl(0, 0%, 100%);
-  --color_2_very_light_grayish_blue: hsl(210, 60%, 98%);
-  --color_3_light_grayish_blue_1: hsl(211, 68%, 94%);
-  --color_4_light_grayish_blue_2: hsl(205, 33%, 90%);
-  --color_5_grayish-blue: hsl(219, 14%, 63%);
-  --color_6_dark_grayish_blue: hsl(219, 12%, 42%);
-  --color_7_very_dark_blue: hsl(224, 21%, 14%);
-  --color_8_red: hsl(1, 90%, 64%);
-  --color_9_blue: hsl(219, 85%, 26%);
-}
-
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
 body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 16px;
-  background-color: var(--color_2_very_light_grayish_blue);
-  color: var(--color_6_dark_grayish_blue);
-<!--  min-height: 100vh;-->
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-<!--  justify-content: center;-->
-  align-items: center;
+  color: white;
+  background:#293949;
+  font-family: 'Open Sans',sans-serif;
+  padding: 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
-
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color_1_white);
-    border-radius: 18px;
-    padding: 5% 25%;
+.sidebar-toggle {
+  margin-left: -240px;
+}
+.sidebar {
+  width: 240px;
+  height: 100%;
+  background: #293949;
+  position: absolute;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  z-index: 100;
+  #leftside-navigation {
+    ul, ul ul {
+      margin: -2px 0 0;
+      padding: 0;
+    }
+    ul {
+      li {
+        list-style-type: none;
+        border-bottom: 1px solid rgba(255,255,255,.05);
+        &.active {
+          & > a {
+            color:#1abc9c;
+          }
+          ul {
+            display: block;
+          }
+        }
+        a {
+          color:#aeb2b7;
+          text-decoration: none;
+          display: block;
+          padding: 18px 0 18px 25px;
+          font-size: 12px;
+          outline: 0;
+          -webkit-transition: all 200ms ease-in;
+          -moz-transition: all 200ms ease-in;
+          -o-transition: all 200ms ease-in;
+          -ms-transition: all 200ms ease-in;
+          transition: all 200ms ease-in;
+          &:hover {
+            color:#1abc9c;
+          }
+          span {
+            display: inline-block;
+          }
+          i {
+            width: 20px;
+            .fa-angle-left, .fa-angle-right {
+              padding-top: 3px;
+            }
+          }
+        }
+      }
+    }
+    ul ul {
+      display: none;
+      li {
+        background: #23313f;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        border-bottom: none;
+        a {
+          font-size: 12px;
+          padding-top: 13px;
+          padding-bottom: 13px;
+          color:#aeb2b7;
+        }
+      }
+    }
   }
-
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-
-  .header-container h1 {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    font-size: 2.0rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .unread-count {
-    width: 35px;
-    height: 26.5px;
-    background-color: var(--color_9_blue);
-    border-radius: 8px;
-    color: var(--color_1_white);
-    position: relative;
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-  }
-
-  .mark-all-as-read-btn {
-    color: var(--color_6_dark_grayish_blue);
-    background: transparent;
-    font-size: 1.4rem;
-    border: none;
-    cursor: pointer;
-  }
-
-
-.message-unread {
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: max-content 4fr max-content;
-  grid-template-rows: 2fr;
-  gap: 10px;
-  background-color: var(--color_2_very_light_grayish_blue);
-  margin-bottom: 10px;
-  padding: 15px;
 }
-
-.message {
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: max-content 4fr max-content;
-  grid-template-rows: 2fr;
-  gap: 10px;
-  color: var(--color_6_dark_grayish_blue);
-  margin-bottom: 10px;
-  padding: 15px;
-}
-
-.image-wrapper img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    height: auto;
-}
-
-.user-info {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0px;
-}
-
-.user-name-and-action {
-  display: flex;
-  align-items: baseline;
-  white-space: nowrap;
-  margin-left: 10px;
-  margin-bottom: 15px;
-}
-
-.user-name {
-    color: var(--color_7_very_dark_blue);
-    font-weight: 900;
-    margin-right: 5px;
-}
-
-.highlight {
-    color: var(--color_6_dark_grayish_blue);
-    font-weight: 900;
-    margin-left: 5px;
-}
-
-.last-online {
-    margin-left: 10px;
-}
-
-.chess {
-  color: var(--color_9_blue);
-  font-weight: 900;
-  margin-left: 5px;
-}
-
-.message-box {
-  border: solid var(--color_6_dark_grayish_blue);
-  border-width: 1px 1px;
-  padding: 12px 12px;
-  margin-top: 15px;
-  margin-left: 10px;
-}
-
-/* footer */
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
-
     </style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-  <link rel="" <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
-  <title>Frontend Mentor | Notifications page</title>
-</head>
+<body class="left-sidebar is-preload">
+<div id="page-wrapper">
 
-<body>
-      <h1 style="margin-left:500px;">Notifications </h1>
-    <ul style="margin-left:250px;">
-        {% for i in data %}
-      <li>
-            {{i.notification}}<br><br>
-      </li>
-        {% endfor %}
-    </ul>
-  <script src="script.js"></script>
+	<!-- Header Wrapper -->
+		<div >
+			<div class="container">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<h1><a href="index.html" id="logo">Cops On Stream</a></h1>
+
+							<!-- Nav -->
+								<nav id="nav">
+								</nav>
+
+						</div>
+					</header>
+
+			</div>
+		</div>
+
+	<aside class="sidebar">
+		<div id="leftside-navigation" class="nano">
+		<ul class="nano-content">
+		<li>
+		<a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+		</li>
+		<li>
+		<a href="{% url 'show_complaint' %}"><i class="fa fa-comments"></i><span>My Complaints</span></a>
+		</li>
+			  <li>
+		<a href="{% url 'file_complaint' id=user.id %}"><i class="fa fa-comments"></i><span>Add a Complaint</span></a>
+		</li>
+
+		<li>
+		<a href="{% url 'my_profile' id=user.id %}"><i class="fa fa-user"></i><span>My Profile</span></a>
+		</li>
+		<li>
+		<a href="{% url 'edit_user' id=user.id %}"><i class="fas fa-user-edit"></i><span>Edit Profile</span></a>
+		</li>
+		<li>
+		<a href="{% url 'log_out' %}"><i class="fa fa-sign-out"></i><span>Logout</span></a>
+		</li>
+		</ul>
+		</div>
+	</aside>
+
+</div>
+
+</div>
+<div class="container">
+  	<div style="margin-left:100px;">
+	{% for i in data %}
+	<h1 style="color:white;">{{i.notification}}</h1>
+	{% endfor %}
+</div>
+
+<!-- Scripts -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+	<script src="{% static 'js/browser.min.js' %}"></script>
+	<script src="{% static 'js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'js/util.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+
 </body>
-
 </html>
